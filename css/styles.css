@@ -1,167 +1,236 @@
-
 *,
-::before,::after {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 }
 
 body {
-/* background-color: #000; */
-min-height: 100vh;
-display: grid;
-place-content: center;
-font-family: system-ui, sans-serif;
-background-color: #4a148c;
+    background-color: #000;
+    min-height: 100vh;
+    place-content: center;
+    font-family: system-ui, sans-serif;
+    background-color: #4a148c;
+    /* display: grid; */
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.liquid-shape {
+    display: flex;
+    position: relative;
+    margin-top: 7%;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.liquid-shape blobs {
+    width: 100%;
+    height: 100%;
+
+}
+
+.liquid-shape path {
+
+    fill: url(#gradient);
+    animation: liquidShape 20s ease-in-out infinite;
 }
 
 /* Ocultar elemento de entrada de rádio */
 input[type="radio"] {
-position: absolute;
-width: 1px;
-height: 1px;
-padding: 0;
-margin: -1px;
-overflow: hidden;
-clip: rect(0, 0, 0, 0);
-white-space: nowrap;
-border-width: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 
 }
 
 /* Posicionamento e estilo para parágrafo*/
 p {
-position: absolute;
-bottom: 2rem;
-right: 2rem;
-color: white;
-font-size: 0.8rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 0.8rem;
 
 }
 
 .circle-wrapper {
-border:  1px solid #0f3e5d;
-position: relative;
-border-radius: 9999px;
-display: grid;
-width: 700px;
-height: 700px;
-grid-template-areas: "stack";
-place-content: center;
+    border: 1px solid #0f3e5d;
+    position: relative;
+    border-radius: 9999px;
+    display: grid;
+    width: 700px;
+    height: 700px;
+    grid-template-areas: "stack";
+    place-content: center;
 
 }
 
 /* Estilos de rótulo dentro do wrapper do círculo */
 label {
-grid-area: stack;
-width: 5rem;
-height: 5rem;
-border-radius: 9999px;
-border: 1px solid #738088;
-display: grid;
-place-content: center;
-background-color: rgba(255, 255, 255, 02);
-position: relative;
-color: #87ceeb;
-font-size: 1.25rem;
-transition-property: all;
-transition-duration: 0.5s;
-cursor: pointer;
-box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    grid-area: stack;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 9999px;
+    border: 1px solid #738088;
+    display: grid;
+    place-content: center;
+    background-color: rgba(255, 255, 255, 02);
+    position: relative;
+    color: #04f904;
+    font-size: 1.25rem;
+    transition-property: all;
+    transition-duration: 0.5s;
+    cursor: pointer;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
 
 }
 
 /* Estilos de imagem */
 img {
-width: 5rem; 
-height: 5rem; 
-border-radius: 50%; 
-object-fit: cover; 
-transition: all 1s ease-in-out;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
 
 }
 
-svg {
-transition: all 0.5s ease-in-out;
-position: absolute;
-inset: 0 0 0 -25%;
-margin: auto;
-width: 125px;
-opacity: 0;
-z-index: -10;
+.fotos {
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    inset: 0 0 0 -25%;
+    margin: auto;
+    width: 125px;
+    opacity: 0;
+    z-index: 0;
 
 }
 
 /*Estilos de elementos centralizados*/
 .center-element {
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-margin: auto;
-width: 10rem;
-height: 10rem;
-background-color: #1b2c36;
-border: 1px solid rgba(255, 255, 255, 0.4);
-border-radius: 50%;
-display: grid;
-place-content: center;
-text-transform: uppercase;
-font-weight: 100;
-letter-spacing: 0.05em;
-color: #cbd5e0;
-font-size: 1.125rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 10rem;
+    height: 10rem;
+    background-color: #1b2c36;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0.05em;
+    color: #cbd5e0;
+    font-size: 1.125rem;
 
 }
 
 /*Antes do pseudoelemento para o elemento central */
 .center-element::before {
-content: "";
-position: absolute;
-top: -1px;
-right: -1px;
-bottom: -1px;
-left: -1px;
-background-color: #0a4368;
-border-radius: 50%;
-z-index: -10;
-transition: all 1s;
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background-color: #0a4368;
+    border-radius: 50%;
+    z-index: -10;
+    transition: all 1s;
 
 }
 
 /*Estilo de entrada de rádio verificado */
-input:checked + label {
-transform: none !important;
-transition-duration: 1s;
+input:checked+label {
+    transform: none !important;
+    transition-duration: 1s;
 
 }
 
 /*Transformação de imagem marcada */
-input:checked + label > img {
-transform: scale(2);
+input:checked+label>img {
+    transform: scale(2);
 
 }
 
 /*transformação svg quando verificado */
-input:checked + label >svg {
-opacity: 1;
-transform: scale(2.25) rotate(45deg);
-transition-delay: 700ms, 500ms, 2000ms;
+input:checked+label>svg {
+    opacity: 1;
+    transform: scale(2.25) rotate(45deg);
+    transition-delay: 700ms, 500ms, 2000ms;
 
 }
 
 /* Estilos de transformação de avatar*/
 .avatar {
---radius: 22rem;
---d: calc(var(--i) / var(--total));
---r-offset: -0.15turn;
---r-amount: 1turn;
---r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
-transform:  rotate(var(--r)) translate(var(--radius))
-rotate(calc(-1 * var(--r)));
+    --radius: 22rem;
+    --d: calc(var(--i) / var(--total));
+    --r-offset: -0.15turn;
+    --r-amount: 1turn;
+    --r: calc((var(--r-amount) * var(--d)) + var(--r-offset));
+    transform: rotate(var(--r)) translate(var(--radius)) rotate(calc(-1 * var(--r)));
 
 }
 
+/*Liquid-shap atras da imagem de perfil*/
 
+.liquid-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: -13%;
+
+}
+
+.liquid-shape:nth-child(2) {
+    filter: blur(50px);
+}
+
+@keyframes liquidShape {
+    0% {
+        d: path("M360.5,332.5Q250,415,183.5,332.5Q117,250,183.5,167.5Q250,85,360.5,167.5Q471,250,360.5,332.5Z");
+    }
+
+    16.67% {
+        d: path("M320.5,291.5Q250,333,169.5,291.5Q89,250,169.5,135Q250,20,320.5,135Q391,250,320.5,291.5Z");
+    }
+
+    33.33% {
+        d: path("M373.5,314Q250,378,133,314Q16,250,133,193Q250,136,373.5,193Q497,250,373.5,314Z");
+    }
+
+    50% {
+        d: path("M293.5,327Q250,404,165.5,327Q81,250,165.5,144Q250,38,293.5,144Q337,250,293.5,327Z");
+    }
+
+    66.67% {
+        d: path("M293,373Q250,496,158,373Q66,250,158,172.5Q250,95,293,172.5Q336,250,293,373Z");
+    }
+
+    83.33% {
+        d: path("M340.5,337Q250,424,163.5,337Q77,250,163.5,145.5Q250,41,340.5,145.5Q431,250,340.5,337Z");
+    }
+
+    100% {
+        d: path("M293.58308,348.46858Q250,446.93716,214.06601,348.46858Q178.13202,250,214.06601,198.67251Q250,147.34501,293.58308,198.67251Q337.16616,250,293.58308,348.46858Z");
+    }
+}
