@@ -9,10 +9,17 @@ Este projeto apresenta uma animação de rotação de perfil, exibindo diversos 
 
 
 ## Tecnologias Utilizadas
-- HTML
-- CSS
-- JavaScript
 
+##  HTML
+A estrutura básica da página web é construída usando HTML, que define os elementos e a organização do conteúdo.
+
+
+
+## CSS
+O design visual da animação, incluindo o layout circular, as cores e os estilos dos personagens, é implementado através do uso de CSS.
+
+## JavaScript
+A interatividade da animação, permitindo que os usuários cliquem nos personagens e os destaquem no centro, é alcançada por meio de JavaScript. Essa linguagem de programação é responsável por controlar a lógica e os efeitos da rotação e destaque dos personagens.
 
 
 
