@@ -1,4 +1,4 @@
-// Desmarque os botões de opção (infelizmente isso não pode ser feito apenas com css)
+
 
 document.querySelectorAll('input[type="radio"]').forEach((radio) => {
     radio.addEventListener("click", (e) => {
